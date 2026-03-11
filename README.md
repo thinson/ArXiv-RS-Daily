@@ -77,34 +77,39 @@ Each paper report includes / 每篇论文报告包含：
 ### Prerequisites / 前置条件
 
 ```bash
-# Python 3.8+
+# Python 3.10+
 # Required packages
-pip install PyGithub pymupdf pillow weasyprint
+pip install PyGithub
+
+# System tools (for PDF previews / text extraction)
+# Ubuntu/Debian
+sudo apt-get install -y poppler-utils
 ```
 
 ### Configuration / 配置
 
-1. **Set GitHub Token / 设置 GitHub Token**
+1. **Set environment variables / 设置环境变量**
    ```bash
-   export GITHUB_TOKEN="your_personal_access_token"
+   export GITHUB_TOKEN="your_github_token"
+   export BAILIAN_KEY="your_bailian_api_key"
+   # optional
+   export REPO_NAME="thinson/RS-PaperClaw"
+   export MODEL="MiniMax-M2.5"
    ```
 
-2. **Create Fine-grained Token / 创建细粒度 Token**
-   - Go to: https://github.com/settings/personal-access-tokens
-   - Repository access: Select this repo
-   - Permissions:
-     - `Contents`: Read and write
-     - `Issues`: Read and write
-     - `Metadata`: Read only
+2. **GitHub token permissions / GitHub Token 权限**
+   - `Contents`: Read and write
+   - `Issues`: Read and write
+   - `Metadata`: Read only
 
 ### Run / 运行
 
 ```bash
-# Batch process papers
-python scripts/batch_process_papers.py
-
 # Process a single paper and update target issue
 python scripts/paper_processor.py <arxiv_id> <issue_number>
+
+# Example
+python scripts/paper_processor.py 2603.08582v1 2
 ```
 
 ---
@@ -118,7 +123,6 @@ RS-PaperClaw/
 │   └── previews/                # PDF page previews (jpg)
 ├── scripts/
 │   ├── paper_processor.py       # Main single-paper pipeline
-│   ├── batch_process_papers.py  # Batch processing
 │   └── prompts/                 # LLM prompts (translate/tags/summarize)
 ├── skills/
 │   └── rs-paper-pipeline/
@@ -144,9 +148,7 @@ RS-PaperClaw/
 
 | Script / 脚本 | Description / 功能 |
 |--------------|-------------------|
-| `paper_processor.py` | Main pipeline: abs+PDF+preview+LLM+quality gate+issue update |
-| `batch_process_papers.py` | Batch process with deduplication |
-| `process_papers.sh` | Shell entrypoint for batch execution |
+| `paper_processor.py` | Main pipeline: abs + PDF + preview + LLM + quality gate + issue update |
 | `scripts/prompts/*.md` | Prompt templates for translation/tags/summary |
 
 ---
