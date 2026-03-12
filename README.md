@@ -29,7 +29,6 @@ RS-PaperClaw 每天自动完成：
 - 🗂️ 同步日报到 `daily_reports/YYYYMM/YYYYMMDD.md`
 - 📮 推送日报到飞书
 
----
 
 
 ## 🎯 为什么以 Issue 为核心？
