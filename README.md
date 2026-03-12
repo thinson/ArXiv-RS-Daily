@@ -1,34 +1,46 @@
+<div align="center">
+
 # RS-PaperClaw🦞
 
-遥感论文自动追踪与分析流水线（arXiv → 单篇报告 Issue → 每日汇总日报）。
+### 遥感论文自动追踪与分析流水线
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-Active-2EA043)](#)
+[![Workflow](https://img.shields.io/badge/Workflow-arXiv%20%E2%86%92%20Issue%20%E2%86%92%20Digest-8A2BE2)](#)
+
+**arXiv → 单篇报告 Issue → 每日汇总日报**
 
 English version: **[README_EN.md](./README_EN.md)**
 
----
-
-## 项目定位
-
-RS-PaperClaw 用于每天自动完成：
-
-1. 拉取 arXiv 候选论文（遥感相关）
-2. 关键词 + LLM 交叉筛选
-3. 生成/更新单篇论文阅读报告（GitHub Issue）
-4. 生成当天日报（GitHub Issue）
-5. 同步日报到仓库 `daily_reports/YYYYMM/YYYYMMDD.md`
-6. 推送日报到飞书
+</div>
 
 ---
 
-## 核心功能
+## ✨ 项目定位
 
-- **单篇报告标准化**：基础信息、TL;DR、中文摘要、标签、前三页预览图、10问分析
-- **日报自动化**：今日概况（含数量统计）、亮点、文章列表、观察
-- **质检门禁**：避免占位内容，保证分析完整性
-- **可追踪归档**：Issue 与 `daily_reports` 文件双轨同步
+RS-PaperClaw 每天自动完成：
+
+- 🔎 拉取 arXiv 候选论文（遥感相关）
+- 🧠 关键词 + LLM 交叉筛选
+- 📝 生成/更新单篇阅读报告（GitHub Issue）
+- 🗞️ 生成当天日报（GitHub Issue）
+- 🗂️ 同步日报到 `daily_reports/YYYYMM/YYYYMMDD.md`
+- 📮 推送日报到飞书
 
 ---
 
-## 目录结构（主分支）
+## 🧩 核心能力
+
+| 模块 | 输出 |
+|---|---|
+| 单篇报告 | 基础信息、TL;DR、中文摘要、标签、前三页预览图、10问分析 |
+| 日报生成 | 今日概况（含数量统计）、亮点、文章列表、观察 |
+| 质量控制 | 过滤占位内容，保障结构完整与可读性 |
+| 结果归档 | Issue + Markdown 双轨同步，便于追踪与回溯 |
+
+---
+
+## 🗺️ 目录结构（主分支）
 
 ```text
 RS-PaperClaw/
@@ -50,7 +62,7 @@ RS-PaperClaw/
 
 ---
 
-## 快速开始
+## 🚀 快速开始
 
 ### 1) 环境准备
 
@@ -77,7 +89,7 @@ python3 skills/rs-paper-pipeline/scripts/run_rs_daily_workday.py
 
 ---
 
-## 定时任务（工作日 09:05）
+## ⏰ 定时任务（工作日 09:05）
 
 ```cron
 CRON_TZ=Asia/Shanghai
@@ -86,7 +98,15 @@ CRON_TZ=Asia/Shanghai
 
 ---
 
-## 说明
+## 📎 说明
 
 - 默认文档语言为中文；英文请看 [README_EN.md](./README_EN.md)
 - 所有脚本均位于 `skills/rs-paper-pipeline/scripts/`
+
+---
+
+<div align="center">
+
+**Powered by OpenClaw🦞**
+
+</div>
