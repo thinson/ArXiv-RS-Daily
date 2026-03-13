@@ -25,6 +25,7 @@
         font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif SC",
           serif;
         color: var(--text);
+        overflow-x: hidden;
         background:
           radial-gradient(circle at top left, #fce8cb 0, transparent 28%),
           radial-gradient(circle at right, #dfefe6 0, transparent 26%),
@@ -106,6 +107,7 @@
         grid-template-columns: 280px minmax(0, 1fr);
         gap: 20px;
         margin-top: 20px;
+        min-width: 0;
       }
 
       .panel {
@@ -113,6 +115,7 @@
         border-radius: 24px;
         background: var(--panel);
         box-shadow: var(--shadow);
+        min-width: 0;
       }
 
       .sidebar {
@@ -120,6 +123,7 @@
         position: sticky;
         top: 20px;
         align-self: start;
+        min-width: 0;
       }
 
       .sidebar h2,
@@ -141,6 +145,7 @@
       .report-list {
         display: grid;
         gap: 10px;
+        min-width: 0;
       }
 
       .report-item {
@@ -171,8 +176,16 @@
         font-size: 0.92rem;
       }
 
+      .report-item.more {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+      }
+
       .content {
         padding: 22px;
+        min-width: 0;
       }
 
       .report-head {
@@ -235,6 +248,49 @@
         overflow: hidden;
         border-radius: 18px;
         background: #fffdf8;
+      }
+
+      .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .table-wrap table {
+        min-width: 760px;
+      }
+
+      .papers-mobile {
+        display: none;
+      }
+
+      .paper-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fffdf8;
+      }
+
+      .paper-card + .paper-card {
+        margin-top: 12px;
+      }
+
+      .paper-card-row + .paper-card-row {
+        margin-top: 10px;
+      }
+
+      .paper-card-label {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .paper-card-value {
+        line-height: 1.65;
       }
 
       th,
@@ -619,12 +675,19 @@
       }
 
       @media (max-width: 900px) {
+        .shell {
+          padding: 20px 14px 32px;
+        }
+
         .layout {
           grid-template-columns: 1fr;
+          gap: 16px;
         }
 
         .sidebar {
           position: static;
+          padding: 16px;
+          order: 1;
         }
 
         .stats {
@@ -634,10 +697,22 @@
         .hero {
           flex-direction: column;
           align-items: stretch;
+          padding: 22px 18px;
+          gap: 16px;
+        }
+
+        .repo-link {
+          width: 100%;
+          justify-content: center;
         }
 
         .report-head {
           flex-direction: column;
+        }
+
+        .content {
+          padding: 18px;
+          order: 2;
         }
 
         .detail-sheet {
@@ -645,8 +720,8 @@
           border-radius: 0;
         }
 
-        .detail-grid {
-          grid-template-columns: 1fr;
+        .detail-inner {
+          padding: 18px 14px 28px;
         }
 
         .detail-topbar {
@@ -657,6 +732,242 @@
         .scroll-top-button {
           right: 18px;
           bottom: 18px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .layout {
+          gap: 14px;
+        }
+
+        .sidebar,
+        .content {
+          width: 100%;
+        }
+
+        .sidebar {
+          padding: 14px;
+        }
+
+        .content {
+          padding: 16px 14px;
+        }
+
+        .sidebar h2,
+        .content h2 {
+          margin-bottom: 10px;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-copy p {
+          font-size: 0.95rem;
+          line-height: 1.55;
+        }
+
+        .panel,
+        .hero {
+          border-radius: 22px;
+        }
+
+        .report-list {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          overflow: visible;
+          margin: 0;
+          padding: 0;
+          gap: 8px;
+        }
+
+        .report-item {
+          padding: 10px 8px;
+          min-height: 68px;
+          width: 100%;
+        }
+
+        .report-item strong {
+          margin-bottom: 2px;
+          font-size: 0.88rem;
+        }
+
+        .report-item span {
+          display: block;
+          font-size: 0.76rem;
+          line-height: 1.35;
+        }
+
+        .summary {
+          margin-bottom: 10px;
+        }
+
+        .report-head {
+          margin-bottom: 14px;
+        }
+
+        .report-head h3 {
+          font-size: 1.9rem;
+        }
+
+        .report-head a {
+          align-self: flex-start;
+        }
+
+        .stats {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .stat {
+          padding: 12px 10px;
+          text-align: center;
+        }
+
+        .stat strong {
+          font-size: 1.15rem;
+        }
+
+        th,
+        td {
+          padding: 10px 12px;
+          font-size: 0.9rem;
+        }
+
+        .table-wrap {
+          display: none;
+        }
+
+        .papers-mobile {
+          display: block;
+        }
+
+        .detail-topbar {
+          position: sticky;
+          top: 0;
+          z-index: 2;
+          padding-bottom: 8px;
+          background: linear-gradient(
+            180deg,
+            rgba(248, 241, 231, 0.96),
+            rgba(248, 241, 231, 0.82),
+            transparent
+          );
+          backdrop-filter: blur(8px);
+        }
+
+        .detail-hero,
+        .detail-card,
+        .analysis-item {
+          padding: 16px;
+          border-radius: 18px;
+        }
+
+        .detail-title {
+          font-size: 1.8rem;
+          line-height: 1.08;
+        }
+
+        .detail-subtitle {
+          font-size: 0.95rem;
+          line-height: 1.65;
+        }
+
+        .detail-hero .tag-row {
+          gap: 8px;
+        }
+
+        .detail-hero .tag-row a,
+        .chip,
+        .back-button,
+        .ghost-link {
+          font-size: 0.9rem;
+        }
+
+        .meta-row {
+          width: 100%;
+          flex-basis: 100%;
+        }
+
+        .preview-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .analysis-item h5 {
+          font-size: 0.98rem;
+        }
+
+        .analysis-conclusion {
+          padding: 12px 14px;
+        }
+
+        .analysis-points {
+          width: 100%;
+        }
+
+        .analysis-line.indent-1 {
+          padding-left: 22px;
+        }
+
+        .analysis-line.indent-2 {
+          padding-left: 30px;
+        }
+
+        .scroll-top-button {
+          right: 14px;
+          bottom: 14px;
+          padding: 10px 14px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .shell {
+          padding: 16px 10px 26px;
+        }
+
+        .hero,
+        .sidebar,
+        .content {
+          border-radius: 18px;
+        }
+
+        .layout {
+          gap: 12px;
+        }
+
+        .sidebar {
+          padding: 12px;
+        }
+
+        .content {
+          padding: 14px 12px;
+        }
+
+        .report-item {
+          min-height: 64px;
+          padding: 9px 7px;
+        }
+
+        .report-item strong {
+          font-size: 0.82rem;
+        }
+
+        .report-item span {
+          font-size: 0.72rem;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .stat {
+          text-align: left;
+          padding: 12px 14px;
+        }
+
+        .section {
+          margin-bottom: 16px;
         }
       }
     </style>
@@ -1338,9 +1649,21 @@
               </button>
             `
           )
-          .join("");
+          .join("") +
+          `
+            <a
+              class="report-item more"
+              href="https://github.com/thinson/RS-PaperClaw/tree/main/daily_reports"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <strong>More</strong>
+              <span>View all reports</span>
+            </a>
+          `;
 
         reportList.querySelectorAll(".report-item").forEach((button) => {
+          if (button.tagName === "A") return;
           button.addEventListener("click", () =>
             renderReport(reports, button.dataset.date, summaryText)
           );
@@ -1400,6 +1723,47 @@
               )
               .join("")
           : '<tr><td colspan="4">暂无文章列表。</td></tr>';
+        const articleCards = report.articles.length
+          ? report.articles
+              .map(
+                (item) => `
+                  <article class="paper-card">
+                    <div class="paper-card-row">
+                      <span class="paper-card-label">标题</span>
+                      <div class="paper-card-value">
+                        ${
+                          item.issueUrl
+                            ? `
+                              <button
+                                class="paper-link"
+                                type="button"
+                                data-issue-url="${escapeHtml(item.issueUrl)}"
+                                data-title="${escapeHtml(item.titleText)}"
+                              >
+                                ${item.title || escapeHtml(item.titleText || "-")}
+                              </button>
+                            `
+                            : item.title || "-"
+                        }
+                      </div>
+                    </div>
+                    <div class="paper-card-row">
+                      <span class="paper-card-label">作者</span>
+                      <div class="paper-card-value">${escapeHtml(item.authors || "-")}</div>
+                    </div>
+                    <div class="paper-card-row">
+                      <span class="paper-card-label">一句话概括</span>
+                      <div class="paper-card-value">${escapeHtml(item.summary || "-")}</div>
+                    </div>
+                    <div class="paper-card-row">
+                      <span class="paper-card-label">Issue</span>
+                      <div class="paper-card-value">${item.issue || "-"}</div>
+                    </div>
+                  </article>
+                `
+              )
+              .join("")
+          : '<div class="empty">暂无文章列表。</div>';
 
         reportDetail.innerHTML = `
           <div class="report-head">
@@ -1439,17 +1803,20 @@
 
           <div class="section">
             <h2>Papers</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>标题</th>
-                  <th>作者</th>
-                  <th>一句话概括</th>
-                  <th>Issue</th>
-                </tr>
-              </thead>
-              <tbody>${articleRows}</tbody>
-            </table>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>标题</th>
+                    <th>作者</th>
+                    <th>一句话概括</th>
+                    <th>Issue</th>
+                  </tr>
+                </thead>
+                <tbody>${articleRows}</tbody>
+              </table>
+            </div>
+            <div class="papers-mobile">${articleCards}</div>
           </div>
         `;
       }
