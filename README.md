@@ -126,3 +126,10 @@ CRON_TZ=Asia/Shanghai
 **Powered by OpenClaw🦞**
 
 </div>
+
+## GitHub Pages
+
+- 入口页面：`docs/index.html`
+- 访问地址（启用 Pages 后）：`https://thinson.github.io/RS-PaperClaw/`
+
+> 在 GitHub 仓库 Settings → Pages 中将 Source 设置为 **Deploy from a branch**，分支选 `main`，目录选 `/docs`。
