@@ -25,15 +25,9 @@ English version: **[README_EN.md](./README_EN.md)**
 
 ## 🖼️ 界面预览
 
-> 已做轻量压缩，兼顾清晰度与加载速度。
-
-### 电脑端
-
-![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg)
-
-### 移动端
-
-<img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="360" />
+| 电脑端 UI | 移动端 UI |
+|---|---|
+| ![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg) | <img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="300" /> |
 
 ---
 

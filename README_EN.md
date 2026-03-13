@@ -25,15 +25,9 @@
 
 ## 🖼️ UI Preview
 
-> Images are lightly compressed for faster loading while keeping readability.
-
-### Desktop
-
-![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg)
-
-### Mobile
-
-<img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="360" />
+| Desktop UI | Mobile UI |
+|---|---|
+| ![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg) | <img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="300" /> |
 
 ---
 
