@@ -23,6 +23,18 @@
 - GitHub Pages: **https://thinson.github.io/RS-PaperClaw/**
 - Digest archive: **[daily_reports/](./daily_reports/README.md)**
 
+## 🖼️ UI Preview
+
+> Images are lightly compressed for faster loading while keeping readability.
+
+### Desktop
+
+![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg)
+
+### Mobile
+
+<img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="360" />
+
 ---
 
 ## ✨ What this project does

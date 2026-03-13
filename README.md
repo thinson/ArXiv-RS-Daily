@@ -23,6 +23,18 @@ English version: **[README_EN.md](./README_EN.md)**
 - 项目主页（GitHub Pages）：**https://thinson.github.io/RS-PaperClaw/**
 - 日报归档目录：**[daily_reports/](./daily_reports/README.md)**
 
+## 🖼️ 界面预览
+
+> 已做轻量压缩，兼顾清晰度与加载速度。
+
+### 电脑端
+
+![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg)
+
+### 移动端
+
+<img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="360" />
+
 ---
 
 ## ✨ 项目做什么
