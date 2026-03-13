@@ -27,7 +27,7 @@
 
 | Desktop UI | Mobile UI |
 |---|---|
-| ![RS-PaperClaw Desktop UI](./docs/screenshots/ui-desktop.jpg) | <img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" width="300" /> |
+| <img src="./docs/screenshots/ui-desktop.jpg" alt="RS-PaperClaw Desktop UI" height="260" /> | <img src="./docs/screenshots/ui-mobile.jpg" alt="RS-PaperClaw Mobile UI" height="260" /> |
 
 ---
 
